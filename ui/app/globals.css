@@ -1,0 +1,74 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --panel-2: #1c2230;
+  --border: #2a313c;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --green: #3fb950;
+  --yellow: #d29922;
+  --red: #f85149;
+  --chip: #21304a;
+}
+[data-theme='light'] {
+  --bg: #f6f8fa; --panel: #ffffff; --panel-2: #f0f3f6; --border: #d0d7de;
+  --text: #1f2328; --muted: #59636e; --accent: #0969da; --green: #1a7f37;
+  --yellow: #9a6700; --red: #cf222e; --chip: #ddf4ff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 24px; }
+header.top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+h1 { font-size: 20px; margin: 0; }
+.sub { color: var(--muted); margin: 2px 0 20px; }
+
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.tab { padding: 10px 16px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; background: none; border-top: none; border-left: none; border-right: none; font-size: 14px; }
+.tab.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.section-title { font-size: 13px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin: 0 0 12px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+tr:hover td { background: var(--panel-2); }
+
+.score { font-weight: 700; padding: 2px 8px; border-radius: 6px; display: inline-block; }
+.score.hi { color: var(--green); background: rgba(63,185,80,.12); }
+.score.mid { color: var(--yellow); background: rgba(210,153,34,.12); }
+.score.lo { color: var(--red); background: rgba(248,81,73,.12); }
+
+.status { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--text); }
+.status.skip, .status.discarded { color: var(--red); background: rgba(248,81,73,.10); }
+
+.btn { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; }
+.btn:hover { border-color: var(--accent); }
+.btn.danger:hover { border-color: var(--red); color: var(--red); }
+.btn.primary { background: var(--accent); color: #0d1117; border-color: var(--accent); font-weight: 600; }
+.btn.sm { padding: 3px 9px; font-size: 12px; }
+
+input[type=text], textarea { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; font: inherit; }
+textarea { resize: vertical; min-height: 38px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip { background: var(--chip); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; font-size: 13px; display: inline-flex; gap: 7px; align-items: center; }
+.chip button { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 14px; line-height: 1; padding: 0; }
+.chip button:hover { color: var(--red); }
+.muted { color: var(--muted); }
+.toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+.toast { position: fixed; bottom: 20px; right: 20px; background: var(--green); color: #0d1117; padding: 10px 16px; border-radius: 8px; font-weight: 600; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+.count { color: var(--muted); font-weight: 400; font-size: 13px; }
+pre.log { background: #000; color: #b9f6ca; border: 1px solid var(--border); border-radius: 8px; padding: 12px; max-height: 320px; overflow: auto; font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; word-break: break-word; margin: 0; }
